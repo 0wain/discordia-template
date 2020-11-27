@@ -55,9 +55,16 @@ for k, v in fs.scandirSync("./commands") do
 	print("	", "[CMDS]", "Success:", k, "has been loaded.")
 end
 
-command.Register("123", "lol gay", function(msg, args)
-	print("123:", msg, args)
-end)
+--[[
+	EVENTS
+]]
+-- Pretty much the same as commands, just load the files and let Discordia handle the emitter stuff.
+print("[EVENTS]", "Loading command files")
+for k, v in fs.scandirSync("./events") do
+	print("[EVENTS]", "Loading:", k)
+	local data = require("./events/"..k)
+	print("	", "[EVENTS]", "Success:", k, "has been loaded.")
+end
 
 -- Start the bot
 CLIENT:run('Bot '..CONFIG.token)
