@@ -30,23 +30,24 @@ end
 --[[
 	HANDLERS
 ]]--
-print("[HANDLER]", "Loading handler files")
+print("[HANDLERS]", "Loading handler files")
 for k, v in fs.scandirSync("./handler") do
-	print("[HANDLER]", "Loading:", k)
+	print("[HANDLERS]", "Loading:", k)
 	local data = require("./handler/"..k)
 	if not data.name then
-		print("	", "[HANDLER]", "Error:", k, "does not have a valid name!")
+		print("	", "[HANDLERS]", "Error:", k, "does not have a valid name!")
 	elseif _G[data.name] then
-		print("	", "[HANDLER]", "Error:", k, "has a name which is already registered as a handler. The name is", data.name)
+		print("	", "[HANDLERS]", "Error:", k, "has a name which is already registered as a handler. The name is", data.name)
 	else
 		_G[data.name] = data
-		print("	", "[HANDLER]", "Success:", k, "has been loaded with the name", data.name)
+		print("	", "[HANDLERS]", "Success:", k, "has been loaded with the name", data.name)
 	end
 end
 
 --[[
 	COMMANDS
 ]]
+-- We don't do anything fancy here, just load the files and let the global handlers do the rest
 print("[CMDS]", "Loading command files")
 for k, v in fs.scandirSync("./commands") do
 	print("[CMDS]", "Loading:", k)
