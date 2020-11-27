@@ -49,6 +49,8 @@ function COMMAND.Register(command, desc, func)
 		desc = desc or "n/a",
 		func = func
 	}
+
+	print("[COMMAND]", "The command", command, "has now been registered")
 end
 
 --[[
