@@ -3,3 +3,7 @@ deps/*
 
 # Discordia
 discordia.log
+gateway.json
+
+# Config
+config.lua
