@@ -11,7 +11,7 @@ Args:
 	q: String, The query to run 
 ]]--
 function SQL.Query(q)
-	SQL.con:exec(q)
+	return SQL.con:exec(q)
 end
 
 --[[
