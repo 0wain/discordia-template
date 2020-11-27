@@ -44,6 +44,15 @@ for k, v in fs.scandirSync("./handler") do
 	end
 end
 
+--[[
+	COMMANDS
+]]
+print("[CMDS]", "Loading command files")
+for k, v in fs.scandirSync("./commands") do
+	print("[CMDS]", "Loading:", k)
+	local data = require("./commands/"..k)
+	print("	", "[CMDS]", "Success:", k, "has been loaded.")
+end
 
 command.Register("123", "lol gay", function(msg, args)
 	print("123:", msg, args)
