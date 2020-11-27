@@ -24,7 +24,7 @@ print("[LIBRARIES]", "Loading library files")
 for k, v in fs.scandirSync("./lib") do
 	print("[LIBRARIES]", "Loading:", k)
 	local data = require("./lib/"..k)
-	print("	", "[LIBRARIES]", "Success:", k, "has been loaded with the name", data.name)
+	print("	", "[LIBRARIES]", "Success:", k, "has been loaded.")
 end
 
 --[[
