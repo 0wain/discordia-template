@@ -13,7 +13,7 @@ Args:
 	perfix: String, The prefix to set
 ]]--
 function COMMAND.SetPrefix(command)
-	return COMMAND.prefix = command or "!"
+	COMMAND.prefix = command or "!"
 end
 --[[
 Name: COMMAND.GetPrefix
