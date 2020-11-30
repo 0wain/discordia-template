@@ -13,7 +13,7 @@ Args:
 	perfix: String, The prefix to set
 ]]--
 function COMMAND.SetPrefix(command)
-	return COMMAND.commands[command] or false
+	return COMMAND.prefix = command or "!"
 end
 --[[
 Name: COMMAND.GetPrefix
@@ -112,9 +112,7 @@ if CONFIG.commandEvent then
 		-- Ignore other bots
 		if author.bot then return end
 
-		--
-		-- <Insert check for prefix>
-		--
+		-- Set active prefix
 		local prefix = command.GetPrefix()
 		-- Invalid prefix
 		if not (string.sub(content, 1, string.len(prefix)) == prefix) then
